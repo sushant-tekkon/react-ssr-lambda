@@ -34,7 +34,7 @@ const handler = async function (event) {
     if (request.uri === "/edgessr") {
       const url = config.SSRApiStack.apiurl;
       const result = await axios.get(url);
-      const app = ReactDOMServer.renderToString(<SSRApp data={result.data} />);
+      const app = ReactDOMServer.renderToString(<SSRApp />);
       const html = indexFile.replace(
         '<div id="root"></div>',
         `<div id="root">${app}</div>`
