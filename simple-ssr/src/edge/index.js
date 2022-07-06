@@ -18,7 +18,7 @@ const indexFile = `
       name="description"
       content="Web site created using create-react-app"
     />
-    <title>React App</title>
+    <title>React App Edge</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
