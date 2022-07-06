@@ -1,7 +1,12 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import React, { useState } from "react";
+import { useState } from "react";
+import { FormProvider, useForm } from "react-hook-form";
+import Content from "./components/Content";
+import Logo from "./components/Logo";
+import Wrapper from "./components/Wrapper";
+import "./style.css";
 
 const SSRApp = () => {
   const [initialValues] = useState({
@@ -16,7 +21,7 @@ const SSRApp = () => {
   });
 
   const onSubmit = ({ email, password, rememberMe }) => {
-    console.log("onsubmit called");
+    console.log("onsubmit called", email, password, rememberMe);
   };
 
   return (
@@ -26,25 +31,26 @@ const SSRApp = () => {
           <img src="logo_vertical.png" alt="logo-alt-text" />
         </Logo>
 
-        <h3 className="text-center pb-4 font-weight-bold">
-          {i18n("app.signIn")}
-        </h3>
+        <h3 className="text-center pb-4 font-weight-bold">Sign In</h3>
 
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
-            <InputFormItem
+            <input
               name="email"
-              placeholder={i18n("user.fields.email")}
+              className="form-control mb-1"
+              placeholder="Email"
               autoComplete="email"
               autoFocus
-              externalErrorMessage={externalErrorMessage}
+              ref={form.register}
             />
 
-            <InputFormItem
+            <input
               name="password"
-              placeholder={i18n("user.fields.password")}
+              placeholder="Password"
+              className="form-control mb-1"
               autoComplete="password"
               type="password"
+              ref={form.register}
             />
 
             <div className="form-group text-center">
@@ -58,22 +64,13 @@ const SSRApp = () => {
                 />
 
                 <label className="form-check-label" htmlFor={"rememberMe"}>
-                  {i18n("user.fields.rememberMe")}
+                  Remember Me
                 </label>
               </div>
             </div>
-            <div className="text-center forgotPassword">
-              <Link className="btn btn-sm btn-link" to="/auth/forgot-password">
-                {i18n("auth.forgotPassword")}
-              </Link>
-            </div>
 
-            <button
-              className="btn btn-primary btn-block"
-              type="submit"
-              disabled={loading}
-            >
-              <ButtonIcon loading={loading} /> {i18n("auth.signin")}
+            <button className="btn btn-primary btn-block" type="submit">
+              Sign In
             </button>
           </form>
         </FormProvider>

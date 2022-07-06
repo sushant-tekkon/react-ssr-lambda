@@ -10,7 +10,15 @@
     "express": "4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "5.0.0"
+    "react-scripts": "5.0.0",
+    "@fortawesome/fontawesome-free": "5.15.1",
+    "@hookform/resolvers": "1.3.2",
+    "bootstrap": "^4.6.0",
+    "react-bootstrap": "^1.6.4",
+    "react-hook-form": "6.14.0",
+    "yup": "0.32.8",
+    "styled-components": "5.2.1"
+
   },
   "scripts": {
     "start": "react-scripts start",
