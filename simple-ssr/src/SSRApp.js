@@ -1,14 +1,12 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import React, { useState } from "react";
-import ProductList from "./components/ProductList";
+import React from "react";
 
-const SSRApp = ({ data }) => {
-  const [result, setResult] = useState({ loading: false, products: data });
+const SSRApp = () => {
   return (
     <div>
-      <ProductList result={result} />
+      <h1>Server side rendering working</h1>
     </div>
   );
 };
