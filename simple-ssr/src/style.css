@@ -6,4 +6,10 @@
   background-color: var(--primary);
   border-color: var(--primary);
 }
+
+.btn-primary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
