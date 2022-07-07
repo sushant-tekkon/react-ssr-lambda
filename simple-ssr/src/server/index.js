@@ -4,10 +4,9 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import SSRApp from "../SSRApp";
-import config from "../config.json";
-import axios from "axios";
+import { ServerStyleSheet } from "styled-components";
 
-const indexFile = `
+const indexFile = (styles) => `
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,6 +18,7 @@ const indexFile = `
       content="Web site created using create-react-app"
     />
     <title>React App</title>
+    ${styles}
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -29,10 +29,10 @@ const indexFile = `
 
 const handler = async function (event) {
   try {
-    const url = config.SSRApiStack.apiurl;
-    const result = await axios.get(url);
-    const app = ReactDOMServer.renderToString(<SSRApp />);
-    const html = indexFile.replace(
+    const sheet = new ServerStyleSheet();
+    const app = ReactDOMServer.renderToString(sheet.collectStyles(<SSRApp />));
+    const styles = sheet.getStyleTags();
+    const html = indexFile(styles).replace(
       '<div id="root"></div>',
       `<div id="root">${app}</div>`
     );
