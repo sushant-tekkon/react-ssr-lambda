@@ -18,6 +18,7 @@ const indexFile = (styles) => `
       content="Web site created using create-react-app"
     />
     <title>React App</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
     ${styles}
   </head>
   <body>
