@@ -5,7 +5,7 @@ import React from "react";
 import Wrapper from "./components/Wrapper";
 import Content from "./components/Content";
 import Logo from "./components/Logo";
-import "./style.css";
+import "./styles.css";
 
 const SSRApp = () => {
   return (
