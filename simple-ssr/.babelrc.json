@@ -17,6 +17,14 @@
         "ssr": true,
         "displayName": true
       }
-    ]
+    ],
+    [
+      "css-modules-transform",
+      {
+        "camelCase": true,
+        "extensions": [".css", ".scss"]
+      }
+    ],
+    "dynamic-import-node"
   ]
 }
