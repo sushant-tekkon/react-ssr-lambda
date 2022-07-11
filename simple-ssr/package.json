@@ -12,7 +12,7 @@
     "babel-plugin-css-modules-transform": "^1.6.2",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "bootstrap": "^4.6.0",
-    "express": "4.17.1",
+    "express": "^4.17.1",
     "mini-css-extract-plugin": "^2.6.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.6.4",
@@ -21,6 +21,7 @@
     "react-scripts": "5.0.0",
     "style-loader": "^3.3.1",
     "styled-components": "5.2.1",
+    "webpack-node-externals": "^3.0.0",
     "yup": "0.32.8"
   },
   "scripts": {
@@ -29,8 +30,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-server": "webpack --config webpack.server.js --mode=development",
+    "build-express": "webpack --config webpack.express.js --mode=development",
+    "start-express": "node ./server-build/index-express.js",
     "build-edge": "webpack --config webpack.edge.js --mode=development",
-    "build-all": "npm-run-all --parallel build build-server build-edge"
+    "build-all": "npm-run-all --parallel build build-server build-express"
   },
   "eslintConfig": {
     "extends": "react-app"
