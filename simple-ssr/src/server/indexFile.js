@@ -25,7 +25,7 @@ const getHtml = (styles) => `
   </body>
 </html>`;
 
-export const indexFile = () => {
+export const getIndexFile = () => {
   const sheet = new ServerStyleSheet();
   const app = ReactDOMServer.renderToString(sheet.collectStyles(<SSRApp />));
   const styles = sheet.getStyleTags();

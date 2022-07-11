@@ -1,11 +1,11 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import { indexFile } from "./indexFile";
+import { getIndexFile } from "./indexFile";
 
 const handler = async function (event) {
   try {
-    const html = indexFile();
+    const html = getIndexFile();
     return {
       statusCode: 200,
       headers: { "Content-Type": "text/html" },

@@ -6,24 +6,25 @@ import ReactDOMServer from "react-dom/server";
 import express from "express";
 
 import SSRApp from "../SSRApp";
+import { getIndexFile } from "./indexFile";
 
 const PORT = process.env.PORT || 3006;
 const app = express();
 
 app.get("/", (req, res) => {
-  const app = ReactDOMServer.renderToString(<SSRApp />);
-  const indexFile = path.resolve("./build/index.html");
-
-  fs.readFile(indexFile, "utf8", (err, data) => {
-    if (err) {
-      console.error("Something went wrong:", err);
-      return res.status(500).send("Oops, better luck next time!");
-    }
-
-    return res.send(
-      data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
-    );
-  });
+  const html = getIndexFile();
+  res.send(html);
+  // const app = ReactDOMServer.renderToString(<SSRApp />);
+  // const indexFile = path.resolve("./build/index.html");
+  // fs.readFile(indexFile, "utf8", (err, data) => {
+  //   if (err) {
+  //     console.error("Something went wrong:", err);
+  //     return res.status(500).send("Oops, better luck next time!");
+  //   }
+  //   return res.send(
+  //     data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
+  //   );
+  // });
 });
 
 app.use(express.static("./build"));
