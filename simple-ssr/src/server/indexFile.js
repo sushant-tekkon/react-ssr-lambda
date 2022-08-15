@@ -14,7 +14,7 @@ const getHtml = (styles) => `
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
     <title>React App</title>
     ${styles}
   </head>

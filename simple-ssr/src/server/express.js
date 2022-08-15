@@ -1,11 +1,4 @@
-import path from "path";
-import fs from "fs";
-
-import React from "react";
-import ReactDOMServer from "react-dom/server";
 import express from "express";
-
-import SSRApp from "../SSRApp";
 import { getIndexFile } from "./indexFile";
 
 const PORT = process.env.PORT || 3006;
