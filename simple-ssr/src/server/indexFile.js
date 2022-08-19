@@ -14,14 +14,13 @@ const getHtml = (styles) => `
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
-    <title>React App</title>
+    <link rel="stylesheet" href="public/theme/dist/magenta.css">
+    <title>Grow Impact Business</title>
     ${styles}
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <div>Rendered on Server</div>
   </body>
 </html>`;
 

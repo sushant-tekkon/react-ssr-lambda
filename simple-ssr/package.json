@@ -33,7 +33,7 @@
     "build-express": "webpack --config webpack.express.js --mode=development",
     "start-express": "node ./server-build/index-express.js",
     "build-edge": "webpack --config webpack.edge.js --mode=development",
-    "build-all": "npm-run-all --parallel build build-server build-express"
+    "build-all": "npm-run-all --parallel build-server build-express"
   },
   "eslintConfig": {
     "extends": "react-app"

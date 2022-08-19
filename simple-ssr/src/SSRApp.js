@@ -5,14 +5,13 @@ import React from "react";
 import Wrapper from "./components/Wrapper";
 import Content from "./components/Content";
 import Logo from "./components/Logo";
-import "./styles.css";
 
 const SSRApp = () => {
   return (
     <Wrapper>
       <Content>
         <Logo>
-          <img src="logo_vertical.png" alt="logo-alt-text" />
+          <img src="public/logo_vertical.png" alt="logo-alt-text" />
         </Logo>
         <h3 className="text-center pb-4 font-weight-bold">Sign In</h3>
         <form>

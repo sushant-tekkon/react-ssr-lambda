@@ -21,20 +21,20 @@ module.exports = {
         test: /\.js$/,
         use: "babel-loader",
       },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          "css-loader",
-        ],
-      },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     {
+      //       loader: MiniCssExtractPlugin.loader,
+      //     },
+      //     "css-loader",
+      //   ],
+      // },
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: "../build/static/css/styles.css",
-    }),
+    // new MiniCssExtractPlugin({
+    //   filename: "../build/static/css/styless.css",
+    // }),
   ],
 };
